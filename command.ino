@@ -114,22 +114,17 @@ int readCommand(char ch,GOTO_VAL *gotoval,int *eval)
           *eval=atoi(sv[0]+1);
           ret='b';
         }
-        else if (!strncmp(sv[0],"gc",5))
+        else if (!strncmp(sv[0],"gc",2))
         {
           *eval=0;
           ret='g';
         }
-        else if (!strncmp(sv[0],"gs",5))
+        else if (!strncmp(sv[0],"gs",2))
         {
           *eval=0;
           ret='s';
         }
 
-        else if (sv[0][0]=='g')
-        {
-          *eval=0;
-          ret='g';
-        }
         else if (sv[0][0]=='m')
         {
           *eval=atoi(sv[0]+1);

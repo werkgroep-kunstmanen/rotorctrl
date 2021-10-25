@@ -6,6 +6,8 @@ For:
 
 One or 2 rotors can be specified. Names are AX and EY: Azimut or X and Elevation or Y
 
+For pinning see rotor_spec.h.
+
 Files:
 
 calibrate.ino	calibration function to run in setup
@@ -42,3 +44,11 @@ Calibration:
 .   DC-motor: max. speed defined by hardware/voltage
 .   stepper motor: defined by xx_MotorSpeed
 . If one of 2 speeds is defined 0 then a single-calibration is done.
+
+For calibration progress detection two 3-colour-led's may be connected, for each rotor one. See rotor_spec.h.
+Colour meaning:
+- Blue: start calibration, move forward from calibration point
+- Purple (blue+red): move back to endswitch
+- White (blue+green+red): move forward to reference point
+- Green: calibration succeeded
+- Red: calibration failed 

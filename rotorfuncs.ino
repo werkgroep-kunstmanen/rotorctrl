@@ -124,13 +124,16 @@ static void moveto(ROTOR *rot)
 // run if not at end-stop with speed in wrong drection
 int run_safe(ROTOR *rot,boolean cont)
 {
-  int aspeed,pspeed;
+  float aspeed;
+  int pspeed;
   int running=1;
   int end1=0,end2=0;
   if (!rot) return 0;
 
-  aspeed=CMDP(rot,speed());                              // actual speed
-  pspeed=(aspeed*100) / CMDP(rot,maxSpeed());            // speed in %
+  aspeed=CMDP(rot,speed());                               // actual speed
+  aspeed=(aspeed*100.) / CMDP(rot,maxSpeed());            // speed in %
+  pspeed=(int)aspeed;                                     // now to integer
+
   if ((aspeed) && (!pspeed)) pspeed=(aspeed<0? -1 : +1); // set to 1% if 0<s<1
   if (pspeed>100) pspeed=100;
   if (pspeed<-100) pspeed=-100;

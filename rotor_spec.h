@@ -35,7 +35,9 @@
  * 02111-1307, USA.
  ********************************************************************/
 // Included by rotorctrl.h
-#define RELEASE "2021.9"
+#define RELEASE "2021.10a"
+
+#define ROT_ID "Rot1"
 
 #ifndef ROTORSPEC_HDR
 #define ROTORSPEC_HDR

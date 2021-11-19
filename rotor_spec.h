@@ -114,6 +114,11 @@
 #endif
 
 // Rotor characteristics
+// _POffset: steps needed to go from end-stop to 0 degrees. 
+//   > 0: end-stop is at -x degrees
+//   < 0: end-stop is at +x degrees
+//
+// _REFPOS:  position where calibration ends. (E.g. for elevation: 90 = zenit)
 #define AX_POffset 10              // Nr. pulses from End Switch To ref. pos = 0
 #define EY_POffset 10              // Nr. pulses from End Switch To ref. pos = 0
 
@@ -124,12 +129,13 @@
 #define EY_STEPS_DEGR 3L*360L      // Nr. pulses per 360 degrees
 
 #if MOTORTYPE == MOT_STEPPER       // 
-  #define AX_MotorSpeed 0          // max. motorspeed
-  #define AX_MotorAccel 0          // max. acceleration
-  #define EY_MotorSpeed 0          // max. motorspeed
-  #define EY_MotorAccel 0          // max. acceleration
+  #define AX_MotorSpeed 100        // max. motorspeed
+  #define AX_MotorAccel 50         // max. acceleration
+  #define EY_MotorSpeed 100        // max. motorspeed
+  #define EY_MotorAccel 50         // max. acceleration
 #endif
 
+// Names
 #if ROTORTYPE==ROTORTYPE_XY        // X/Y
   #define AX_NAME "X"              // name of rotor 2
   #define EY_NAME "Y"              // name of rotor 1

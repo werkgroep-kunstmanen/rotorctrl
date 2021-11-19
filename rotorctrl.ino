@@ -157,6 +157,7 @@ void setup(void)
 
   // define serial input
   Serial.begin(SERIAL_SPEED);       // Start Serial Communication Interface
+  Serial.println(ROT_ID);
 
   digitalWrite(LED_BUILTIN, LOW);   // LED off; start calibration
   delay(1000);

@@ -101,7 +101,6 @@ void xprintf(char *frmt,...)
 #define SERDEL 10
 void send_specs(ROTOR *AX_rot,ROTOR *EY_rot)
 {
-  
   char tmp[10];
   xprintf("SPEC: Release %s",RELEASE);                            delay(SERDEL);
   xprintf("SPEC: AX_POffset     =%ld",(long)AX_POffset);          delay(SERDEL);

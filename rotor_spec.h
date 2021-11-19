@@ -128,6 +128,7 @@
 #define AX_STEPS_DEGR 3L*360L      // Nr. pulses per 360 degrees
 #define EY_STEPS_DEGR 3L*360L      // Nr. pulses per 360 degrees
 
+// Speeds
 #if MOTORTYPE == MOT_STEPPER       // 
   #define AX_MotorSpeed 100        // max. motorspeed
   #define AX_MotorAccel 50         // max. acceleration

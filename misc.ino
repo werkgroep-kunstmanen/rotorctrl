@@ -102,29 +102,29 @@ void xprintf(char *frmt,...)
 void send_specs(ROTOR *AX_rot,ROTOR *EY_rot)
 {
   char tmp[10];
-  xprintf("SPEC: Release %s",RELEASE);                            delay(SERDEL);
-  xprintf("SPEC: AX_POffset     =%ld",(long)AX_POffset);          delay(SERDEL);
-  xprintf("SPEC: EY_POffset     =%ld",(long)EY_POffset);          delay(SERDEL);
+  xprintf("SPEC: Release %s",RELEASE);                              delay(SERDEL);
+  xprintf("SPEC: AX_POffset     =%ld",(long)AX_POffset);            delay(SERDEL);
+  xprintf("SPEC: EY_POffset     =%ld",(long)EY_POffset);            delay(SERDEL);
 
-  xprintf("SPEC: AX_REFPOS      =%s",dtostrf(AX_REFPOS,5,1,tmp)); delay(SERDEL);
-  xprintf("SPEC: EY_REFPOS      =%s",dtostrf(EY_REFPOS,5,1,tmp)); delay(SERDEL);
+  xprintf("SPEC: AX_REFPOS      =%s",dtostrf(AX_REFPOS,5,1,tmp));   delay(SERDEL);
+  xprintf("SPEC: EY_REFPOS      =%s",dtostrf(EY_REFPOS,5,1,tmp));   delay(SERDEL);
 
-  xprintf("SPEC: AX_STEPS_DEGR  =%ld",(long)AX_STEPS_DEGR);       delay(SERDEL);
-  xprintf("SPEC: EY_STEPS_DEGR  =%ld",(long)EY_STEPS_DEGR);       delay(SERDEL);
+  xprintf("SPEC: AX_STEPS_DEGR  =%ld",(long)AX_STEPS_DEGR);         delay(SERDEL);
+  xprintf("SPEC: EY_STEPS_DEGR  =%ld",(long)EY_STEPS_DEGR);         delay(SERDEL);
 
  #if MOTORTYPE == MOT_STEPPER
-  xprintf("SPEC: AX_MotorSpeed  =%d",(int)AX_MotorSpeed);         delay(SERDEL);
-  xprintf("SPEC: AX_MotorAccel  =%d",(int)AX_MotorAccel);         delay(SERDEL);
-  xprintf("SPEC: EY_MotorSpeed  =%d",(int)EY_MotorSpeed);         delay(SERDEL);
-  xprintf("SPEC: EY_MotorAccel  =%d",(int)EY_MotorAccel);         delay(SERDEL);
+  xprintf("SPEC: AX_MotorSpeed  =%d",(int)AX_MotorSpeed);           delay(SERDEL);
+  xprintf("SPEC: AX_MotorAccel  =%d",(int)AX_MotorAccel);           delay(SERDEL);
+  xprintf("SPEC: EY_MotorSpeed  =%d",(int)EY_MotorSpeed);           delay(SERDEL);
+  xprintf("SPEC: EY_MotorAccel  =%d",(int)EY_MotorAccel);           delay(SERDEL);
  #else
-  xprintf("SPEC: MINSPEED       =%d",(int)MINSPEED);              delay(SERDEL);
-  xprintf("SPEC: MAXSPEED       =%d",(int)MAXSPEED);              delay(SERDEL);
-  xprintf("SPEC: L_DEGR_MAXSPEED=%d",(int)L_DEGR_MAXSPEED);       delay(SERDEL);
-  xprintf("SPEC: H_DEGR_MINSPEED=%d",(int)H_DEGR_MINSPEED);       delay(SERDEL);
-  xprintf("SPEC: D_DEGR_STOP    =%d",(int)D_DEGR_STOP);           delay(SERDEL);
-  xprintf("SPEC: PWMFreq        =%d",(int)PWMFreq);               delay(SERDEL);
-  xprintf("SPEC: MAX_PWM        =%d",(int)MAX_PWM);               delay(SERDEL);
+  xprintf("SPEC: MINSPEED       =%d",(int)MINSPEED);                delay(SERDEL);
+  xprintf("SPEC: MAXSPEED       =%d",(int)MAXSPEED);                delay(SERDEL);
+  xprintf("SPEC: L_DEGR_MAXSPEED=%d",(int)L_DEGR_MAXSPEED);         delay(SERDEL);
+  xprintf("SPEC: H_DEGR_MINSPEED=%d",(int)H_DEGR_MINSPEED);         delay(SERDEL);
+  xprintf("SPEC: D_DEGR_STOP    =%s",dtostrf(D_DEGR_STOP,5,1,tmp)); delay(SERDEL);
+  xprintf("SPEC: PWMFreq        =%d",(int)PWMFreq);                 delay(SERDEL);
+  xprintf("SPEC: MAX_PWM        =%d",(int)MAX_PWM);                 delay(SERDEL);
  #endif
 }
 

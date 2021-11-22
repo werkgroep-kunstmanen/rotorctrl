@@ -142,15 +142,16 @@ void send_pos(ROTOR *AX_rot,ROTOR *EY_rot)
   char sdig[4][10];
   float axpos_degr=0.,axreq_degr=0.,eypos_degr=0.,eyreq_degr=0.;
   int ax_speed=0,ey_speed=0;
+  int swap=(SWAP_DIR? -1 : 1);
   if (AX_rot) 
   {
-    axpos_degr=AX_rot->degr;
+    axpos_degr=AX_rot->degr*swap;
     axreq_degr=AX_rot->req_degr;
     ax_speed  =AX_rot->speed;
   }
   if (EY_rot) 
   {
-    eypos_degr=EY_rot->degr;
+    eypos_degr=EY_rot->degr*swap;
     eyreq_degr=EY_rot->req_degr;
     ey_speed  =EY_rot->speed;
   }

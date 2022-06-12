@@ -291,7 +291,7 @@ int rotor_goto(ROTOR *rot,float val)
   float req_degr;      // requested pos. rotor in decdegrees
   float diff_degr;
   int speed;
-  if (!rot) return;
+  if (!rot) return 0;
 
   #if ROTORTYPE==ROTORTYPE_AE
     #if FULLRANGE_AZIM == false
@@ -365,7 +365,7 @@ static int run_one_rotor(ROTOR *rot,float pos,long *run_err,float *err)
 #if MOTORTYPE == MOT_STEPPER
   rot->rotated=CMDP(rot,currentPosition());
 #else
-  if (rot->err_degr==*err) *run_err++; else *run_err=0;
+  if (rot->err_degr==*err) (*run_err)++; else (*run_err)=0;
   *err=rot->err_degr;
 #endif
   return busy;

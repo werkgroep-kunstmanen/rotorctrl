@@ -142,10 +142,10 @@ void setup(void)
     pinMode(PIN_SIMPLS_EY , OUTPUT);   // 
   #endif
   // define interrupts for backpulsecounters
-  #ifdef PIN_ROTPLS_AX && PIN_ROTPLS_AX >=0
+  #if PIN_ROTPLS_AX && PIN_ROTPLS_AX >=0
     attachInterrupt(digitalPinToInterrupt(PIN_ROTPLS_AX) , AX_pos_handler , RISING);
   #endif
-  #ifdef PIN_ROTPLS_EY && PIN_ROTPLS_EY >=0
+  #if PIN_ROTPLS_EY && PIN_ROTPLS_EY >=0
     attachInterrupt(digitalPinToInterrupt(PIN_ROTPLS_EY) , EY_pos_handler , RISING);
   #endif
 

@@ -76,7 +76,7 @@ void xprint(int x,int y,char *s)
 #define STRLEN 60
 
 // print format to serial and/or display
-void xdispprintf(int x,int y,char *frmt,...)
+void xdispprintf(int x,int y,const char *frmt,...)
 {
   char str[STRLEN];
   va_list ap;
@@ -87,7 +87,7 @@ void xdispprintf(int x,int y,char *frmt,...)
 
 
 // print format to serial only
-void xprintf(char *frmt,...)
+void xprintf(const char *frmt,...)
 {
   char str[STRLEN];
   va_list ap;

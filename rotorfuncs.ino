@@ -268,7 +268,8 @@ void run_motor(ROTOR *rot,int speed)
   CMDP(rot,setSpeed(nspeed));
   CMDP(rot,runSpeed());
 #else
-  set_dir(rot,speed >= 0? HIGH : LOW);
+  if (speed)
+    set_dir(rot,speed >= 0? HIGH : LOW);
   set_speed(rot,abs(speed));
 #endif
   if ((rot->calibrated) && (speed!=rot->speed))

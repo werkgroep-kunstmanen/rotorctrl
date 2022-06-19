@@ -164,6 +164,7 @@ int run_safe(ROTOR *rot,boolean cont)
 
 /*********************************************************************
  * define speed from degrees between current and target position
+ * For DC motors.
  * input: deg = difference current and requested angle in degrees
  * return: speed in percents (100=max. speed)
  *********************************************************************/
@@ -179,7 +180,7 @@ static int rotor_speed(ROTOR *rot,float deg)
   else
   {
     #if MOTORTYPE == MOT_DC_PWM
-   {
+    {
       float tmp;
       tmp=(float)(adg-H_DEGR_MINSPEED)*(rot->maxspeed-rot->minspeed)/(float)(L_DEGR_MAXSPEED-H_DEGR_MINSPEED);
       tmp=tmp + rot->minspeed;
@@ -192,13 +193,6 @@ static int rotor_speed(ROTOR *rot,float deg)
       speed=(int)((float)(adg-H_DEGR_MINSPEED)*100/(float)(L_DEGR_MAXSPEED-H_DEGR_MINSPEED));
     }
     #endif
-
-    float tmp;
-    tmp=(float)(adg-H_DEGR_MINSPEED)*(MAXSPEED-MINSPEED)/(float)(L_DEGR_MAXSPEED-H_DEGR_MINSPEED);
-    tmp=tmp + MINSPEED;
-    speed=(int)tmp;
-    speed=MIN(speed,MAXSPEED);
-    speed=MAX(speed,MINSPEED);
 
     if (deg<0) speed*=-1;
     #if SWAP_DIR

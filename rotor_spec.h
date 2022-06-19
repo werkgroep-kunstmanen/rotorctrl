@@ -165,9 +165,12 @@
 #define SPEED_LOW 20               // below this speed PIN_LOWSPD_.. becomes active 
 #endif
 
+// Next also needed for MOT_DC_FIX, though not all really used as such!
 #if ((MOTORTYPE == MOT_DC_PWM) || (MOTORTYPE == MOT_DC_FIX))
-  #define MINSPEED 50                // min. speed (% of max. voltage)
-  #define MAXSPEED 100               // max. speed (% of max. voltage)
+  #define AX_MINSPEED 50             // min. speed (% of max. voltage)
+  #define AX_MAXSPEED 100            // max. speed (% of max. voltage)
+  #define EY_MINSPEED 50             // min. speed (% of max. voltage)
+  #define EY_MAXSPEED 100            // max. speed (% of max. voltage)
   #define L_DEGR_MAXSPEED 10.        // >= diff-degrees where rotorspeed is max.
   #define H_DEGR_MINSPEED 2.         // <= diff-degrees where rotorspeed is min.
   #define D_DEGR_STOP 0.2            // <= diff-degrees to stop rotor

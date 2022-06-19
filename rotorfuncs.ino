@@ -178,6 +178,21 @@ static int rotor_speed(ROTOR *rot,float deg)
   }
   else
   {
+    #if MOTORTYPE == MOT_DC_PWM
+   {
+      float tmp;
+      tmp=(float)(adg-H_DEGR_MINSPEED)*(rot->maxspeed-rot->minspeed)/(float)(L_DEGR_MAXSPEED-H_DEGR_MINSPEED);
+      tmp=tmp + rot->minspeed;
+      speed=(int)tmp;
+      speed=MIN(speed,rot->maxspeed);
+      speed=MAX(speed,rot->minspeed);
+    }
+    #else
+    { // MOTORTYPE == MOT_DC_FIX
+      speed=(int)((float)(adg-H_DEGR_MINSPEED)*100/(float)(L_DEGR_MAXSPEED-H_DEGR_MINSPEED));
+    }
+    #endif
+
     float tmp;
     tmp=(float)(adg-H_DEGR_MINSPEED)*(MAXSPEED-MINSPEED)/(float)(L_DEGR_MAXSPEED-H_DEGR_MINSPEED);
     tmp=tmp + MINSPEED;

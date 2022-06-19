@@ -87,6 +87,10 @@ static void setup_ax(ROTOR *rot)
   rot->cal_status=cal_notdone;
   AX_set_pins(rot);
   rot->steps_degr=AX_STEPS_DEGR;
+  #if ((MOTORTYPE == MOT_DC_PWM) || (MOTORTYPE == MOT_DC_FIX)) 
+    rot->minspeed=AX_MINSPEED;
+    rot->maxspeed=AX_MAXSPEED;
+  #endif
   #if MOTORTYPE == MOT_STEPPER
     rot->stepper=&stepperAX;
     CMDP(rot,setMaxSpeed(AX_MotorSpeed));     // Set the X rotor-motor maximum speed
@@ -104,6 +108,10 @@ static void setup_ey(ROTOR *rot)
   rot->cal_status=cal_notdone;
   EY_set_pins(rot);
   rot->steps_degr=EY_STEPS_DEGR;
+  #if ((MOTORTYPE == MOT_DC_PWM) || (MOTORTYPE == MOT_DC_FIX)) 
+    rot->minspeed=EY_MINSPEED;
+    rot->maxspeed=EY_MAXSPEED;
+  #endif
   #if MOTORTYPE == MOT_STEPPER
     rot->stepper=&stepperEY;
     CMDP(rot,setMaxSpeed(EY_MotorSpeed));     // Set the X rotor-motor maximum speed

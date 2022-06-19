@@ -118,10 +118,10 @@ void send_specs(ROTOR *AX_rot,ROTOR *EY_rot)
   xprintf("SPEC: EY_MotorSpeed  =%d",(int)EY_MotorSpeed);           delay(SERDEL);
   xprintf("SPEC: EY_MotorAccel  =%d",(int)EY_MotorAccel);           delay(SERDEL);
  #else
-  xprintf("SPEC: AX_MINSPEED    =%d",(int)MINSPEED);                delay(SERDEL);
-  xprintf("SPEC: AX_MAXSPEED    =%d",(int)MAXSPEED);                delay(SERDEL);
-  xprintf("SPEC: EY_MINSPEED    =%d",(int)MINSPEED);                delay(SERDEL);
-  xprintf("SPEC: EY_MAXSPEED    =%d",(int)MAXSPEED);                delay(SERDEL);
+  xprintf("SPEC: AX_MINSPEED    =%d",(int)AX_MINSPEED);             delay(SERDEL);
+  xprintf("SPEC: AX_MAXSPEED    =%d",(int)AX_MAXSPEED);             delay(SERDEL);
+  xprintf("SPEC: EY_MINSPEED    =%d",(int)EY_MINSPEED);             delay(SERDEL);
+  xprintf("SPEC: EY_MAXSPEED    =%d",(int)EY_MAXSPEED);             delay(SERDEL);
   xprintf("SPEC: L_DEGR_MAXSPEED=%d",(int)L_DEGR_MAXSPEED);         delay(SERDEL);
   xprintf("SPEC: H_DEGR_MINSPEED=%d",(int)H_DEGR_MINSPEED);         delay(SERDEL);
   xprintf("SPEC: D_DEGR_STOP    =%s",dtostrf(D_DEGR_STOP,5,1,tmp)); delay(SERDEL);

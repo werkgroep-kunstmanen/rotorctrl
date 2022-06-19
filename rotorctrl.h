@@ -110,6 +110,8 @@ typedef struct rotor
   float err_degr;        // error
   long steps_degr;       // # steps (pulses) for 360 degrees rotation
   int speed;             // current speed
+  int minspeed;          // minimum speed
+  int maxspeed;          // maximum speed
   float d2v_slope;       // slope speed/degr
   int round;             // full 360 degrees
   boolean dir;           // direction

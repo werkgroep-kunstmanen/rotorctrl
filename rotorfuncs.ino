@@ -334,7 +334,7 @@ int rotor_goto(ROTOR *rot,float val)
     diff_degr=req_degr - rot_degr;
     rot->err_degr=diff_degr;
 
-    speed=rotor_speed(NULL,diff_degr);
+    speed=rotor_speed(rot,diff_degr);
     run_motor(rot,speed);
   #endif
 

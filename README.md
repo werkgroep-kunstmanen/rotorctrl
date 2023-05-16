@@ -6,6 +6,9 @@ For:
 
 One or 2 rotors can be specified. Names are AX and EY: Azimut or X and Elevation or Y
 
+Library for PWM used:
+https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/arduino-pwm-frequency-library/Arduino%20PWM%20Frequency%20Library%20v_05.zip
+
 For pinning see rotor_spec.h.
 
 Files:
